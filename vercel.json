@@ -1,5 +1,5 @@
 {
-  "buildCommand": "unzip -o munchmix.zip && npm install --legacy-peer-deps && CI=false npm run build",
+  "buildCommand": "for z in *.zip; do [ -e \"$z\" ] && unzip -qo \"$z\"; done; npm install --legacy-peer-deps && CI=false npm run build",
   "outputDirectory": "build",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
